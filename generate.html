@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+	body{
+		Background-image:linear-gradient(to right, yellow, red,blue,white,black,orange);
+		Font-size:1.2rem;
+}
+div{
+	padding-top:2rem;
+	Height:250px;
+	margin:0 auto;
+	width:53%;
+	margin-top:30vh;
+	Background-image:linear-gradient(to right, grey, red,blue);
+	Border-radius:20px;
+	Justify-content:center;
+	
+}
+#psw{
+	margin-left:13vh;
+	Margin-top:-9px;
+}
+#psw button input {
+	color:red;
+	Font-style:italic;
+	Height:34px;
+}
+h1{
+	text-align:center;
+	Color:white;
+	font-size:35px;
+	}
+	label{
+		Margin-left:25px;
+}
+#psw:hover{
+	Background-image:linear-gradient(to right, grey, cyan, black);
+	color:white;
+	cursor:pointer;
+	transion:3s;
+}
+button:hover{
+	Background-image:linear-gradient(to left, grey, cyan, black);
+	color:white;
+	cursor:pointer;
+	transion:3s;
+}
+input
+	{
+	Background-image:linear-gradient(to left, yellow, green, purple);
+	color:white;
+	cursor:pointer;
+	transion:3s;
+	Font-size:25px;
+	Height:34px;
+}
+button{
+	height:40px;
+	Margin-top:-5px;
+	Paddin-top:-5px;
+	Font-size:1.2rem;
+}
+p{
+	text-align:center;
+	Font-size:2em;
+	color:white;
+}
+</style>
+</head>
+<body>
+	<div>
+<h1>Password generator</h1>
+  <label>
+  <input type="text" disabled placeholder="Password generator">
+  </label>
+  <button >Generate</button><br><br>
+  <button id="psw">Submit</button>
+  <p id="p"></p>
+  </div>
+  
+   
+  <script type="text/javascript">
+  let input = document.querySelector('input');
+    let button = document.querySelector('button');
+  
+  
+  
+  button.addEventListener('click',() => {
+  input.value = GeneratePassword(6);
+  });
+  
+  
+  function GeneratePassword(length = 6){
+  let chartset = '+9989ahahhwheushsabwisgrbklqnydwh%eiw^@:@*^~9';
+   
+   let password = '';
+   for(let i = 0; i < length ; ++i){
+    
+    let at= Math.floor(Math.random() * (chartset.length + 1));
+    
+    password +=chartset.charAt(at);
+   }
+   return  password;
+  }
+  let psw=document.getElementById("psw");
+  
+  
+   
+  </script>
+</body>
+</html>
